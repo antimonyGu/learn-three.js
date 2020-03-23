@@ -67,7 +67,7 @@ function init() {
 	renderer.gammaOutput = true;
 	renderer.setSize( canvasWidth, canvasHeight );
 	// renderer.setClearColorHex( 0xffffff, 1.0 );
-  renderer.setClearColor(new THREE.Color(0xEEEEEE, 1.0));
+  	renderer.setClearColor(new THREE.Color(0xEEEEEE, 1.0));
 }
 function addToDOM() {
     var container = document.getElementById('container');
