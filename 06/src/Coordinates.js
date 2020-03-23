@@ -1,5 +1,5 @@
-// import * as THREE from 'three'
-const THREE = require('three');
+import * as THREE from 'three'
+// const THREE = require('three');
 
 // var THREE = window.THREE;
 /**
@@ -12,7 +12,7 @@ const THREE = require('three');
  * @param {Object} config
  * @param {Object} theme
  */
-function Coordinates(config, theme) {
+export function Coordinates(config, theme) {
   config = config || {};
   /**
    * Group where all the objects (axes, ground, grids) are put
@@ -276,4 +276,4 @@ Coordinates.prototype.drawAllAxes = function (params) {
   wrap.add( arrowZ );
   return wrap;
 };
-module.exports = Coordinates;
+// module.exports = Coordinates;
