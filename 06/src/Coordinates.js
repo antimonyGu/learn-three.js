@@ -130,8 +130,8 @@ Coordinates.prototype.drawGrid = function (params) {
   params = params || {};
   var color = params.color !== undefined ? params.color:'#505050';
   var orientation = params.orientation !== undefined ? params.orientation:"x";
-  var grid = new THREE.GridHelper( 500, 10 );
-  grid.setColors( 0xa8a8a8, color );
+  var grid = new THREE.GridHelper( 500, 10, 0xa8a8a8, color );
+  // grid.setColors( 0xa8a8a8, color );
   if (orientation === "x") {
     grid.rotation.x = - Math.PI / 2;
   } else if (orientation === "y") {
