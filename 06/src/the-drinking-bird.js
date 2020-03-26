@@ -62,6 +62,7 @@ function init() {
 function createSupport() {
 
    var cubeMaterial = new THREE.MeshLambertMaterial( { color: 0xF07020 } );
+   let whiteCubeMaterial = new THREE.MeshLambertMaterial( { color: 0xffffff } ); // use white material to display z-fighting
 	// base
 	var cube;
 	cube = new THREE.Mesh( 
@@ -81,7 +82,7 @@ function createSupport() {
 	
 	// left leg
 	cube = new THREE.Mesh( 
-		new THREE.CubeGeometry( 64, 334+52, 6 ), cubeMaterial );
+		new THREE.CubeGeometry( 64, 334+52, 6 ), whiteCubeMaterial );
 	cube.position.x = 0;	// centered on origin along X
 	cube.position.y = (334+52)/2;
 	cube.position.z = 77 + 6/2;	// offset 77 + half of depth 6/2
@@ -98,7 +99,7 @@ function createSupport() {
     
 	// right leg
     cube = new THREE.Mesh( 
-		new THREE.CubeGeometry( 64, 334+52, 6 ), cubeMaterial );
+		new THREE.CubeGeometry( 64, 334+52, 6 ), whiteCubeMaterial );
 	cube.position.x = 0;	// centered on origin along X
 	cube.position.y = (334+52)/2;
 	cube.position.z = -77 + 6/2;	// offset 77 + half of depth 6/2
