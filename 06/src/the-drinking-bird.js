@@ -60,9 +60,8 @@ function init() {
 
 // Supporting frame for the bird - base + legs + feet
 function createSupport() {
-
-   var cubeMaterial = new THREE.MeshLambertMaterial( { color: 0xF07020 } );
-   let whiteCubeMaterial = new THREE.MeshLambertMaterial( { color: 0xffffff } ); // use white material to display z-fighting
+   	var cubeMaterial = new THREE.MeshPhongMaterial( { color: 0xF07020, shininess: 30, specular: new THREE.Color(0.5, 0.5, 0.5) } );
+   	let whiteCubeMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, shininess: 4, specular: new THREE.Color(0.5, 0.5, 0.5) } ); // use white material to display z-fighting
 	// base
 	var cube;
 	cube = new THREE.Mesh( 
@@ -82,9 +81,9 @@ function createSupport() {
 	
 	// left leg
 	cube = new THREE.Mesh( 
-		new THREE.CubeGeometry( 64, 334+52, 6 ), whiteCubeMaterial );
+		new THREE.CubeGeometry( 64, 334, 6 ), whiteCubeMaterial );
 	cube.position.x = 0;	// centered on origin along X
-	cube.position.y = (334+52)/2;
+	cube.position.y = (334)/2 + 52;
 	cube.position.z = 77 + 6/2;	// offset 77 + half of depth 6/2
 	scene.add( cube );
 	
@@ -99,17 +98,17 @@ function createSupport() {
     
 	// right leg
     cube = new THREE.Mesh( 
-		new THREE.CubeGeometry( 64, 334+52, 6 ), whiteCubeMaterial );
+		new THREE.CubeGeometry( 64, 334, 6 ), whiteCubeMaterial );
 	cube.position.x = 0;	// centered on origin along X
-	cube.position.y = (334+52)/2;
+	cube.position.y = (334)/2 + 52;
 	cube.position.z = -77 + 6/2;	// offset 77 + half of depth 6/2
 	scene.add( cube );
 }
 
 // Body of the bird - body and the connector of body and head
 function createBody() {
-    var sphereMaterial = new THREE.MeshLambertMaterial( { color: 0xA00000 } );
-    var cylinderMaterial = new THREE.MeshLambertMaterial( { color: 0x0000D0 } );
+    var sphereMaterial = new THREE.MeshPhongMaterial( { color: 0xA00000, shininess: 100, specular: new THREE.Color(0.5, 0.5, 0.5), } );
+    var cylinderMaterial = new THREE.MeshPhongMaterial( { color: 0x0000D0, shininess: 100, specular: new THREE.Color(0.5, 0.5, 0.5), } );
     // sphere
     let sphere = new THREE.Mesh(new THREE.SphereGeometry( 116/2, 32, 16 ), sphereMaterial);
     sphere.position.x = 0;
@@ -126,8 +125,8 @@ function createBody() {
 
 // Head of the bird - head + hat
 function createHead() {
-    var sphereMaterial = new THREE.MeshLambertMaterial( { color: 0xA00000 } );
-    var cylinderMaterial = new THREE.MeshLambertMaterial( { color: 0x0000D0 } );
+    var sphereMaterial = new THREE.MeshPhongMaterial( { color: 0xA00000, shininess: 100, specular: new THREE.Color(0.5, 0.5, 0.5), } );
+    var cylinderMaterial = new THREE.MeshPhongMaterial( { color: 0x0000D0, shininess: 100, specular: new THREE.Color(0.5, 0.5, 0.5), } );
     // head
     let sphere = new THREE.Mesh(new THREE.SphereGeometry( 116/2, 32, 16 ), sphereMaterial);
     sphere.position.x = 0;
@@ -149,6 +148,13 @@ function createHead() {
 }
 
 function createDrinkingBird() {
+	//////////////////////////////
+	// YOU SHOULD MODIFY THE SHININESS:
+	// use MeshPhongMaterial
+	// hat and body: 100
+	// leg: 4
+	// foot: 30
+	// specular color for all of these to 0.5,0.5,0.5
 
 	// MODELS
 	// base + legs + feet

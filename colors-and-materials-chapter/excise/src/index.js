@@ -1,1 +1,0 @@
-import vertex from './vertex-attributes.js';
