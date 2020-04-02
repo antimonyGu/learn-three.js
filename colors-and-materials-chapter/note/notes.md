@@ -65,3 +65,12 @@ phong shading cost more computation resources but more accurate to show the spec
 - back face will not shown for any transparent objects. If turn back face on will get strange rendering effects.
 
 # RAY TRACING ALGORITHM SOLVES TRANSPARENCY ISSUES DIRECTLY
+
+# PAPER LANTERN SHADING
+- render the model twice: once with backface cull and a second time with front cull and flip normal
+
+# GLASS CUBE ON THE TABLE
+- the bottom face has z-fighting with the table
+
+# SHADING AND ILLUMINATION COSTS
+![speed](./note-pictures/speed-compare.jpg)

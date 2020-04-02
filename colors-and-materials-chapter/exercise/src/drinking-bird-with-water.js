@@ -57,7 +57,7 @@ function drawDrinkingBird() {
 
 	// MODIFY THIS TO BE TRANSPARENT:
 	// specular means high light
-	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0xFFFFFF, shininess: 100, transparent: true, opacity: 0.3, specular: 0xFFFFFF } );
+	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, shininess: 100, transparent: true, opacity: 0.3, specular: 0xFFFFFF } );
 	
 	var legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
 	legMaterial.color.setHex( 0xAdA79b );
