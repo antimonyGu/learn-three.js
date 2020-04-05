@@ -40,6 +40,7 @@ function fillScene() {
 	var markMaterial = new THREE.MeshLambertMaterial( { color: 0x89581F } );
 	var mark12Material = new THREE.MeshLambertMaterial( { color: 0xE6880E } );
 	var handMaterial = new THREE.MeshLambertMaterial( { color: 0x226894 } );
+	var hourHandMaterial = new THREE.MeshLambertMaterial( { color: 0xE02BFB } );
 
 	// clock
 	var clock = new THREE.Mesh(
@@ -80,6 +81,16 @@ function fillScene() {
 	// YOUR CODE HERE
     cube.rotation.y = -Math.PI / 6;
 	scene.add( cube );
+	
+	// add clock minute hand
+	var sphere = new THREE.Mesh(
+		new THREE.SphereGeometry( 10, 32, 16 ), hourHandMaterial );
+	sphere.position.y = 18;	// move the hand above the other hand
+	// YOUR CODE HERE:
+	sphere.scale.set( 3, .2, .2); // x: 60 / (2 * radius 10 ) -> 3
+	// y: 4 / (2 * radius 10 ) -> 0.2
+	sphere.rotation.y = Math.PI / 6;
+	scene.add( sphere );
 }
 
 function drawHelpers() {
