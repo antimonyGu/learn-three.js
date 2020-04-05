@@ -13,3 +13,5 @@
 
 # WHAT HAPPEN IF THE ORDER IS REVERSED
 - if translate before rotate the center of the object will not be the origin point, but rotation takes place with respect to the origin. So it might make the position of the object change.
+
+# OBJECT3D
