@@ -15,3 +15,14 @@
 - if translate before rotate the center of the object will not be the origin point, but rotation takes place with respect to the origin. So it might make the position of the object change.
 
 # OBJECT3D
+## the order of scale, rotate, translate when mesh is puted into object3d
+![object3d](./note-pictures/object3d.jpg)
+
+# HIERARCHY OF OBJECTS
+## serious of tranforms I want to apply
+1. Once you apply a transform, forget about it.
+2. draw a picture!
+3. undo if you are not moving towords your goal.
+
+# INSTANCING
+- Instancing is the idea that a single geometric set of triangles can be reused again and again. And it can use less memory.
