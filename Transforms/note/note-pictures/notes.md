@@ -1,0 +1,15 @@
+# EULER ANGLES
+- X-ROLL AKA. pitch
+- Y-ROLL AKA. YAW/HEAD
+- Z-ROLL AKA. ROLL  
+*** euler angles have the Gimbal Lock promblem. ***
+
+# SCALIING
+- NON-UNIFORM SCALING: scale vary. eg. cube.scale.x = 1; cube.scale.y = 0.5; cube.scale.z =1;
+- UNIFORM SCALING: does not change any angles within the model itself. eg. cube.scale = new THREE.Vector3(3, 3, 3);
+
+# THE ORDER OF THE OPERATIONS: SCALE, ROTATE, TRANSLATE IN THREE.JS
+- the sequence is: scale -> rotate -> translate. So no matter what order you set these parameters, three.js always evaluates them in the order of scale, rotate, translate.
+
+# WHAT HAPPEN IF THE ORDER IS REVERSED
+- if translate before rotate the center of the object will not be the origin point, but rotation takes place with respect to the origin. So it might make the position of the object change.
