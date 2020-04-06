@@ -26,3 +26,11 @@
 
 # INSTANCING
 - Instancing is the idea that a single geometric set of triangles can be reused again and again. And it can use less memory.
+
+# CAN THESE BE DONE IN ANY ORDER?
+|question|true or false|
+|-|-|
+|series of translations.|Yes|
+|series of rotations|No|
+|series of scales|Yes|
+|rotations & translations along the same axis|Yes|
