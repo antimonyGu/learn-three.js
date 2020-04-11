@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+// TODO: want to add source map to improve debug experiences 
 module.exports = {
     entry: './src/index.js',
     output: {
