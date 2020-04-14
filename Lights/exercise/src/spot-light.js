@@ -44,11 +44,14 @@ function fillScene() {
 	// var light = new THREE.DirectionalLight( 0xFFFFFF, 1.5 );
 	// light.position.set( -200, 200, -400 );
 
-    const spotLight = new THREE.spotLight(0xffffff, 1.5);
+    const spotLight = new THREE.SpotLight(0xffffff, 1.5);
     spotLight.position.set( -400, 1200, 300 );
     spotLight.angle = 20 * Math.PI / 180;
-
-	// scene.add( light );
+    // spotLight.exponent has been replaced by penumbra
+    spotLight.penumbra = 1.0;
+    spotLight.target.position.set(0, 200, 0);
+    scene.add(spotLight);
+    scene.add( spotLight.target );
 
 	var solidGround = new THREE.Mesh(
 		new THREE.PlaneGeometry( 10000, 10000 ),
