@@ -5,10 +5,12 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import $ from "jquery";
-import themes from './themes'
-import { Coordinates as  CoordinateCreater } from './Coordinates';
-const  Coordinates = new CoordinateCreater({}, themes.dark);
+// import themes from './themes'
+// import { Coordinates as  CoordinateCreater } from './Coordinates';
+// const  Coordinates = new CoordinateCreater({}, themes.dark);
 import * as dat from 'dat.gui';
+
+// Ask a question on stack overflow and wait for answers.https://stackoverflow.com/questions/61290570/have-some-problem-when-i-finish-a-course-exercise-in-udacity-and-want-to-add-sha
 
 var camera, scene, renderer;
 var cameraControls;
@@ -310,11 +312,8 @@ function createDrinkingBird(bbird) {
 
 	// go through all objects and set the meshes (only)
 	// so that they cast shadows
-    debugger
 	bbird.traverse( function ( object ) {
-		debugger
 		if ( object instanceof THREE.Mesh ) {
-            debugger
 			object.castShadow = true;
 			object.receiveShadow = true;
 		}
@@ -332,7 +331,7 @@ function setupGui() {
 }
 
 function drawHelpers() {
-	Coordinates.drawGrid({size:10000,scale:0.01});
+	// Coordinates.drawGrid({size:10000,scale:0.01});
 }
 
 function addToDOM() {
