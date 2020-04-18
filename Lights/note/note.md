@@ -11,3 +11,7 @@
 
 # SPOT LIGHT
 
+# DEFERRED RENDEING
+To avoid the expense of adding a lot of lights to the scene, we can use deferred rendering. 
+
+# SHADOW MAPPING
