@@ -253,8 +253,15 @@ function addToDOM() {
 
 function animate() {
 	window.requestAnimationFrame(animate);
-    light.position.x = Math.cos(effectController.angle * Math.PI / 180);
-    light.position.z = Math.sin(effectController.angle * Math.PI / 180);
+    // light.position.x = Math.cos(effectController.azimuth * Math.PI / 180);
+    // light.position.z = Math.sin(effectController.azimuth * Math.PI / 180);
+
+    // altitude
+    light.position.y = Math.sin( effectController.altitude * Math.PI/180.0 );
+    // azimuth
+    var length = Math.sqrt(1 - light.position.y*light.position.y);
+    light.position.x = length * Math.cos( effectController.azimuth * Math.PI/180.0 );
+    light.position.z = length * Math.sin( effectController.azimuth * Math.PI/180.0 );
 	render();
 }
 
@@ -266,10 +273,14 @@ function render() {
 
 function setupGui() {
 	effectController = {
-		angle: 160
+		// angle: 160,
+        azimuth: 160,
+        altitude: 60,
 	};
 	var gui = new dat.GUI();
-	gui.add( effectController, "angle", 0.0, 360.0 ).name("rotation angle");
+	// gui.add( effectController, "angle", 0.0, 360.0 ).name("rotation angle");
+    gui.add(effectController, "azimuth", 0.0, 360.0).name("azimuth");
+    gui.add(effectController, "altitude", 0.0, 360.0).name("altitude");
 }
 
 try {
