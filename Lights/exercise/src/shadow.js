@@ -68,7 +68,10 @@ function fillScene() {
 	spotlight.exponent = 1;
 	spotlight.target.position.set( 0, 200, 0 );
     spotlight.castShadow = true;
+	spotlight.shadow.camera.far = 2500;
 	scene.add( spotlight );
+	scene.add( new THREE.CameraHelper( spotlight.shadow.camera ) );  // add helper to help me debug
+
 
 	var lightSphere = new THREE.Mesh(
 		new THREE.SphereGeometry( 10, 12, 6 ),
