@@ -1,1 +1,2 @@
-import lookat from './lookat'
+// import lookat from './lookat'
+import fovSlider from './FOV-slider'
