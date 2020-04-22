@@ -21,3 +21,7 @@ This camera is more like real life, with objects in the distance being smaller. 
 # THREE.JS PERSPECTIVE CAMERA
 If you later change the values on the camera itself, such as the field of view near or far planes,  in three.js you need to call camera.updateProjectionMatrix();
 in order to have these changes take effect.
+
+# PERSPECATIVE MATRIX
+![perspective matrix formed from the three.js parameters](./note-pictures/perspective-matrix.jpg)
+![](./note-pictures/illustrator.jpg)
