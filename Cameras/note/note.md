@@ -25,3 +25,15 @@ in order to have these changes take effect.
 # PERSPECATIVE MATRIX
 ![perspective matrix formed from the three.js parameters](./note-pictures/perspective-matrix.jpg)
 ![](./note-pictures/illustrator.jpg)
+
+# HOMOGENEOUS COORDINATES
+![homogeneous-matrix](note-pictures/homogeneous-matrix.jpg)
+
+# CLIPPING
+Clipping is a step that happens after projection and before division by W. It cutes the segments and triangle edges that poke out through the frustum.
+![](note-pictures/clipping.jpg)
+
+# FIELD OF VIEW(FOV)
+When we try to go infinitely far away and have the field of view approaching an angle of zero degree the view becomes an orthographic projection.
+
+# TRUE FIELD OF VIEW
