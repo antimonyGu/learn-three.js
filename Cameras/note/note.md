@@ -53,3 +53,13 @@ When we try to go infinitely far away and have the field of view approaching an 
 [view transform pipeline demo](http://www.realtimerendering.com/udacity/transforms.html)  
 [opengl transformation pipeline](http://www.songho.ca/opengl/gl_transform.html)  
 [GLSL transformation pipeline](https://en.wikibooks.org/wiki/GLSL_Programming/Vertex_Transformations)
+
+# ANTIALIASING(抗锯齿)
+MULTISAMPLING(MSAA): cost a lot of memory and computing resources  
+two algorithum of antialiasing
+- MLAA
+- FXAA
+```javascript
+render = new THREE.WebGLRenderer({ antialias: true });
+// turning this on doesn't necessarily do anything. It depends upon whether the GPU supports Anti-aliasing, and whether the browser decides to allow it.
+```
