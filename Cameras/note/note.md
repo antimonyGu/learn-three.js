@@ -37,3 +37,19 @@ Clipping is a step that happens after projection and before division by W. It cu
 When we try to go infinitely far away and have the field of view approaching an angle of zero degree the view becomes an orthographic projection.
 
 # TRUE FIELD OF VIEW
+![true field of view](note-pictures/true-field-of-world.jpg)
+
+# TARGET
+
+# DOLLY, PAN, ORBIT
+![dolly,pan,orbit](note-pictures/dolly,pan,orbit.jpg)
+
+# NEAR AND FAR CLIPPING
+
+# DEPHTH OF FIELD
+
+# WINDOW COORDINATES
+![window coordinates](./note-pictures/window-coordinates.jpg)
+[view transform pipeline demo](http://www.realtimerendering.com/udacity/transforms.html)  
+[opengl transformation pipeline](http://www.songho.ca/opengl/gl_transform.html)  
+[GLSL transformation pipeline](https://en.wikibooks.org/wiki/GLSL_Programming/Vertex_Transformations)
