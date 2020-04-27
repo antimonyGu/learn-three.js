@@ -5,7 +5,15 @@
 
 # ORTHOGRAPHIC CAMERA
 
-# THREE.JS ORTHGRAPHIC CAMERA
+# THREE.JS ORTHOGRAPHIC CAMERA
+```javascript
+var viewSize = 900;
+camera = new THREE.OrthographicCamera( 
+    -aspectRatio*viewSize / 2, aspectRatio*viewSize / 2, 
+    viewSize / 2, -viewSize / 2, 
+    -1000, 1000 );
+```
+![three.js orthographic camera](./note-pictures/three.js-orthographic-camera.jpg)
 
 # LOOK AT
 frame of reference for the camera(照相机的参考系)
@@ -13,6 +21,7 @@ frame of reference for the camera(照相机的参考系)
 # VIEW TRANSFORM
 
 # NORMALIZED DEVICE COORDINATES
+![](./note-pictures.note-pictures/normal-device-coordinates.jpg)
 
 # PERSPECTIVE CAMERA
 This camera is more like real life, with objects in the distance being smaller. The view matrix is the same as the orthographic camera. But perspective camera is different.
@@ -63,3 +72,5 @@ two algorithum of antialiasing
 render = new THREE.WebGLRenderer({ antialias: true });
 // turning this on doesn't necessarily do anything. It depends upon whether the GPU supports Anti-aliasing, and whether the browser decides to allow it.
 ```
+# GRAPHICS PIPELINE COORDINATES
+starts in: *MODEL COORDINATES* to *WORLD COORDINATES* to *VIEW COORDINATES* to *CLIP COORDINSTES* to *NORMARLIZED DEVICE COORDINATES* to *WINDOW COORDINATES*
