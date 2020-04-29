@@ -21,7 +21,7 @@ frame of reference for the camera(照相机的参考系)
 # VIEW TRANSFORM
 
 # NORMALIZED DEVICE COORDINATES
-![](./note-pictures.note-pictures/normal-device-coordinates.jpg)
+![](./note-pictures/normal-device-coordinates.jpg)
 
 # PERSPECTIVE CAMERA
 This camera is more like real life, with objects in the distance being smaller. The view matrix is the same as the orthographic camera. But perspective camera is different.
