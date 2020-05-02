@@ -36,3 +36,16 @@ The way in which a model is associated with its texture is called texture mappin
 [limits-of-triangles](http://www.realtimerendering.com/blog/limits-of-triangles/)  
 Though I do not have enough time to read them. Orz
 
+# WRAP MODES
+- repeat: If you want to have things look continuous, such as water, then the texture itself needs to be what is called seamless, where its edges mach up.
+- mirrored repeat: If your texture is not seamless, one cheap way to tile it accross the plane is to set the wrap mode to be mirrored repeat.
+- clamp to edge: The pixels on the edge are used to fill in the area.
+```javascript
+// set wrap mode in three.js
+let texture = new THREE.Texture();
+texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
+texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
+```
+## An example
+[relative path of the demo](../exercises/src/examples/wrap-mode.js)
