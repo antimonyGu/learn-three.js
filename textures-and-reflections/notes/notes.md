@@ -49,3 +49,26 @@ texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
 ```
 ## An example
 [relative path of the demo](../exercises/src/examples/wrap-mode.js)
+
+# TEXTURE TRANSFORM
+![change UVs to repeat](./notes-pictures/change-UVs-to-repeat.jpg)  
+This is a bit intrusive, you have to modify the geometric mesh itself.
+## alternate solution in three.js
+```javascript
+let texture = new THREE.Texture();
+texture.repeat.set(1, 1); // how many times a texture should repeat across the surface.
+texture.offset.set(0, 0); // Offset is a translation adding to the uv coordinate after scaling.
+```
+
+# TEXTURE MAGNIFICATION
+## METHODS OF SAMPLING THE TEXTURE
+- nearest neighbor: Whatever texel center is closest to the pixel center, is the color the pixel gets.
+- bilinear interpolation: It takes the four closest texel centers and interpolates among them.
+```javascript
+// in three.js how to set to use these two methods
+let texture =  new THREE.Texture();
+texture.magFilter = THREE.NearestFilter;
+texture.magFilter = THREE.LinearFilter; // avoid texels cover a lot of pixels
+```
+![magnification&minification](./notes-pictures/magnification-minification.jpg)
+
