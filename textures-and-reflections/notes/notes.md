@@ -72,3 +72,13 @@ texture.magFilter = THREE.LinearFilter; // avoid texels cover a lot of pixels
 ```
 ![magnification&minification](./notes-pictures/magnification-minification.jpg)
 
+# SMOOTH TO SHARP
+When improving the resolution of the image the edges jump from smooth to sharp. It is because 
+- Minification is occorring
+- Linear interpolation is no longer being used
+- On average, each pixel covers more than one texel
+- The magfilter no longer applies
+
+# MINIFICATION
+Minification causes two problems. First one is, for a high resolution checker texture, it simply causes the edges to become sharp. And the other one is that the far part of infinite checkerborder will be noise. The problem is that each pixel in the distance covers a few texels. As we get closer and closer to the horizen, the number of texels per pixel increases. When the fragment shader looks up what's in the texture, it gets whatever texel happens to be at the center of the pixel. At the horizon, this selection is almost random, so we get noise as we very between white and black texels.
+[relative path of the demo](../exercises/src/examples/texture-minification.js)
