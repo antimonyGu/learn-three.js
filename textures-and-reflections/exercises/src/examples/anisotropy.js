@@ -1,6 +1,6 @@
 "use strict"; // good practice - see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 ////////////////////////////////////////////////////////////////////////////////
-// Mipmapping demo
+// Anisotropy demo
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE, document, window, dat*/
 import * as THREE from 'three'
@@ -10,6 +10,7 @@ import themes from '../themes'
 import { Coordinates as  CoordinateCreater } from '../Coordinates';
 const  Coordinates = new CoordinateCreater({}, themes.dark);
 import * as dat from 'dat.gui';
+
 
 var path = "";	// STUDENT: set to "" to run on your computer, "/" for submitting code to Udacity
 
@@ -221,7 +222,7 @@ function render() {
 
 function resetGui() {
 	effectController.magnification = 'linear';
-	effectController.minification = 'nearest';
+	effectController.minification = 'mipmap';
 	effectController.anisotropy = 1;
 	effectController.fov = 40;
 	effectController.repeat = 3;
@@ -235,7 +236,7 @@ function setupGui() {
 	effectController = {
 		// Actually, resetGui sets the values, use that for defaults
 		magnification: 'linear',
-		minification: 'nearest',
+		minification: 'mipmap',
 		anisotropy: 1,
 		fov: 40,
 		repeat: 3,
@@ -256,7 +257,7 @@ function setupGui() {
 		anisoList.push(anisoCount);
 		anisoCount *= 2;
 	}
-	//gui.add( effectController, "anisotropy", anisoList ).name("anisotropy");
+	gui.add( effectController, "anisotropy", anisoList ).name("anisotropy");
 	gui.add( effectController, "repeat", 0.1, 10.0 ).name("texture repeat");
 	gui.add( effectController, "fov", 5, 150 ).name("field of view");
 	gui.add( effectController, "mtlName", ['checker 1x1 (gray)','checker 2x2','checker 4x4','checker 8x8','checker 16x16','checker 32x32','checker 64x64','checker 128x128','checker 256x256','checker 512x512','crate','grid','water','concrete','letterR'] ).name("texture image");

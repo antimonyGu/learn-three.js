@@ -87,3 +87,24 @@ Minification causes two problems. First one is, for a high resolution checker te
 The GPU has built into a special functionality that implements an algorithm called mip-mapping. With mip-mapping the GPU computes approximately what the texel to pixel ratio is. If this ratio is less than one Magnification happens and the mag-filter takes effect. If this ratio is greater than one, minification is happening.
 ![mip-mapping](./notes-pictures/mip-mapping.png)  
 ![mipmapping chain](./notes-pictures/mipmap-chain.jpg)
+
+# ANISTROPY
+# ANISOTROPIC SAMPLING
+*Anisotropic*: means having a different value in different directions.
+*Sampling*: means retrieving some pieces of information meant to represent the whole.
+![ANISTROPY](./notes-pictures/anisotropy.png)  
+
+# SAMPLING AND FILTERING
+```javascript
+let texture = new THREE.Texture();
+texture.magFilter = THREE.NearestFilter;
+texture.magFilter = THREE.LinearFilater; // the norm
+
+texture.minFilter = THREE.NearestFilter;
+texture.minFilter = THREE.LinearFilater;
+texture.magFilter = THREE.LinearMipMapLinearFilter; // the norm
+
+texture.anisotropy = 1; // does not exist on older GPUs
+texture.anisotropy = renderer.getMaxAnisotropy();
+```
+[sampling&filtering example](../exercises/src/examples/anisotropy.js)
