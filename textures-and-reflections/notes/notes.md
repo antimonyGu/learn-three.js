@@ -82,3 +82,8 @@ When improving the resolution of the image the edges jump from smooth to sharp. 
 # MINIFICATION
 Minification causes two problems. First one is, for a high resolution checker texture, it simply causes the edges to become sharp. And the other one is that the far part of infinite checkerborder will be noise. The problem is that each pixel in the distance covers a few texels. As we get closer and closer to the horizen, the number of texels per pixel increases. When the fragment shader looks up what's in the texture, it gets whatever texel happens to be at the center of the pixel. At the horizon, this selection is almost random, so we get noise as we very between white and black texels.
 [relative path of the demo](../exercises/src/examples/texture-minification.js)
+
+# MIPMAPPING
+The GPU has built into a special functionality that implements an algorithm called mip-mapping. With mip-mapping the GPU computes approximately what the texel to pixel ratio is. If this ratio is less than one Magnification happens and the mag-filter takes effect. If this ratio is greater than one, minification is happening.
+![mip-mapping](./notes-pictures/mip-mapping.png)  
+![mipmapping chain](./notes-pictures/mipmap-chain.jpg)
