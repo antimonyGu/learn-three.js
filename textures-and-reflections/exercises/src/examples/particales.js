@@ -91,13 +91,19 @@ function fillScene() {
 		geometry.vertices.push( vertex );
 
 	}
+	// var disk = THREE.ImageUtils.loadTexture( path + './cs291/disc.png' );
+	// var material = new THREE.ParticleBasicMaterial(
+	// 	{ size: 35, sizeAttenuation: false, map: disk, transparent: true } );
+    
+    // have a try use PointsMaterial to instead of ParticleBasicMaterial
 
-	var disk = THREE.ImageUtils.loadTexture( path + './cs291/disc.png' );
-	var material = new THREE.ParticleBasicMaterial(
-		{ size: 35, sizeAttenuation: false, map: disk, transparent: true } );
+    // a new api to make a billboard showed in three.js's official demo
+    var sprite = new THREE.TextureLoader().load( './cs291/disc.png' );
+    var material = new THREE.PointsMaterial(
+    { size: 35, sizeAttenuation: false, map: sprite, transparent: true, alphaTest: 0.5 } ); // add alphaTest to avoid some particles show the black part
 	material.color.setHSL( 0.9, 0.2, 0.6 );
 
-	var particles = new THREE.ParticleSystem( geometry, material );
+	var particles = new THREE.Points( geometry, material );
 	particles.sortParticles = true;
 	scene.add( particles );
 }
