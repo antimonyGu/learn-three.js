@@ -4,4 +4,5 @@
 // import textureMagnification from './examples/texture-magnification';
 // import textureMinification from './examples/texture-minification';
 // import textureMipmapping from './examples/texture-mipmapping';
-import anisotropy from './examples/anisotropy';
+// import anisotropy from './examples/anisotropy';
+import particles from './examples/particales';

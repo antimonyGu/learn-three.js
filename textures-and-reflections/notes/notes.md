@@ -108,3 +108,37 @@ texture.anisotropy = 1; // does not exist on older GPUs
 texture.anisotropy = renderer.getMaxAnisotropy();
 ```
 [sampling&filtering example](../exercises/src/examples/anisotropy.js)
+
+# TRANSPARENCY MAPPING
+To make a transparency mapping you need a texture with alpha. Usually its PNG form.
+![example of texture with alpha](./notes-pictures/transparency-mapping.png)
+
+# THE MEANING OF ALPHA
+![meaning of alpha](./notes-pictures/meaning-of-alpha.jpg)  
+I should note that alpha truly stands for the product of opacity and coverage. Be careful not to think of alpha as just one or the other, because it's always their product. For example, if your texture was semitransparent and had an alpha of 0.8, and a particular pixel was covered by 0.3 of the textured polygon (and you could compute this), you would multiply these two together to get a final alpha, 0.24.  
+
+# PREMULTIPLIED ALPHA
+![premultiplied alpha](./notes-pictures/premultiplied-alpha.jpg)
+
+# PRITICLES AND BILLLBOARDS
+
+# MAKING PARTICALES
+```javascript
+// making particles in three.js
+let disk = THREE.ImageUtils.loadTexture('pathToYourTexture');
+let material = new THREE.ParticleBasicMaterial( // use this material to make texture always facing towards us
+    { 
+        size: 25, 
+        sizeAttenuation: false, // set false to make each particale to have constant size on the screen
+        map: disk, 
+        transparent: true 
+    }
+);
+material.color.setHSL(0.9, 0.2, 0.6);
+
+let particles = new THREE.ParticleSystem(geometry, material);
+particles.sortParticles = true; // this means we want the particles in the system to be sorted with respect to the camera's view
+scene.add(particles);
+```
+[example](../exercises/src/examples/particales.js)
+
