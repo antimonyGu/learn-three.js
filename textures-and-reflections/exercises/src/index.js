@@ -5,4 +5,5 @@
 // import textureMinification from './examples/texture-minification';
 // import textureMipmapping from './examples/texture-mipmapping';
 // import anisotropy from './examples/anisotropy';
-import particles from './examples/particales';
+// import particles from './examples/particales';
+import particleGrid from './particle-grid';
