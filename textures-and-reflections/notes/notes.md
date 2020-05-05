@@ -140,5 +140,19 @@ let particles = new THREE.ParticleSystem(geometry, material);
 particles.sortParticles = true; // this means we want the particles in the system to be sorted with respect to the camera's view
 scene.add(particles);
 ```
-[example](../exercises/src/examples/particales.js)
+[example](../exercises/src/examples/particales.js)  
 
+# DISPLACEMENT AND NORMAL MAPPING
+I do not understand this chapter though I've learned it for many times.
+- displacement mapping
+- 
+
+# LIGHT MAPPING
+
+# AMBIENT OCCLUSION(AO)
+
+There is a class of algorihums for interactive rendering called screen space ambient occlusion or SSAO.
+
+# REFLECTION MAPPING
+
+# GLOSSY REFLECTION
