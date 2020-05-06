@@ -6,4 +6,5 @@
 // import textureMipmapping from './examples/texture-mipmapping';
 // import anisotropy from './examples/anisotropy';
 // import particles from './examples/particales';
-import particleGrid from './particle-grid';
+// import particleGrid from './particle-grid';
+import pickALetter  from './pick-a-letter';

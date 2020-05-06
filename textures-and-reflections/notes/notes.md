@@ -156,3 +156,6 @@ There is a class of algorihums for interactive rendering called screen space amb
 # REFLECTION MAPPING
 
 # GLOSSY REFLECTION
+
+# DIFFUSE ENVIRONMENT MAPPING
+
