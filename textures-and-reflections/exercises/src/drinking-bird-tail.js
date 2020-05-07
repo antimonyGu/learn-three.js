@@ -1,7 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Add a grassy plain underneath the drinking bird
+// Add a tail feather to the drinking bird
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE */
+
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import $ from "jquery";
@@ -14,7 +15,28 @@ var camera, scene, renderer;
 var cameraControls;
 var bevelRadius = 1.9;
 var clock = new THREE.Clock();
-var cylinder,sphere,cube;
+var cube, sphere, cylinder;
+
+function createTail() {
+	// Student: add the tail texture here
+	// texture is located at /media/img/cs291/textures/feather.png
+	const featherTexture = THREE.ImageUtils.loadTexture('./cs291/textures/feather.png');
+	var tail = new THREE.Mesh(
+		new THREE.PlaneGeometry( 100, 100, 1, 1 ),
+		new THREE.MeshLambertMaterial(
+			{ side: THREE.DoubleSide, map: featherTexture, transparent: true,  } ) );
+
+	// I need the order to be X rotation before Y, so set the order to YZX;
+	// note that, as usual, the order is read right to left.
+	tail.eulerOrder = 'YZX';
+	tail.scale.y = 2;
+	tail.rotation.x = 40.0 * Math.PI / 180;
+	tail.rotation.y = 90.0 * Math.PI / 180;
+	tail.position.x = 120;
+	tail.position.y = 250;
+
+	return tail;
+}
 
 function fillScene() {
 	scene = new THREE.Scene();
@@ -28,32 +50,6 @@ function fillScene() {
 	light = new THREE.DirectionalLight( 0xFFFFFF, 0.9 );
 	light.position.set( -200, -100, -400 );
 	scene.add( light );
-
-	// GROUND
-	// Student: texture is located at URL /media/img/cs291/textures/grass512x512.jpg
-    const grassTexture = THREE.ImageUtils.loadTexture('./cs291/textures/grass512x512.jpg');
-	grassTexture.repeat.set( 10, 10 );
-	grassTexture.wrapS = THREE.RepeatWrapping;
-	grassTexture.wrapT = THREE.RepeatWrapping;
-    const grassTextureMaterial = new THREE.MeshLambertMaterial( { map: grassTexture } );
-    	var solidGround = new THREE.Mesh(
-		new THREE.PlaneGeometry( 10000, 10000, 100, 100 ),
-		grassTextureMaterial );
-	solidGround.rotation.x = - Math.PI / 2;
-
-	scene.add( solidGround );
-
-	// uncomment to see grid on ground
-	/*
-	// put grid lines every 10000/100 = 100 units
-	var ground = new THREE.Mesh(
-		new THREE.PlaneGeometry( 10000, 10000, 100, 100 ),
-		new THREE.MeshBasicMaterial( { color: 0x0, wireframe: true } ) );
-	ground.rotation.x = - Math.PI / 2;
-	// cheat: offset by a small amount so grid is on top
-	ground.position.y = 0.2;
-	scene.add( ground );
-	*/
 
 	// Bird
 	var bird = new THREE.Object3D();
@@ -182,6 +178,8 @@ function createBody(bbody) {
 	cylinder.position.set( 0, 360, 0 );
 	cylinder.rotation.x = 90 * Math.PI / 180.0;
 	bbody.add( cylinder );
+	var tail = createTail();
+	bbody.add(tail);
 }
 
 // Head of the bird - head + hat
@@ -292,12 +290,9 @@ function init() {
 	renderer.setSize(canvasWidth, canvasHeight);
 	renderer.setClearColor( 0xAAAAAA, 1.0 );
 
-	var container = document.getElementById('container');
-	container.appendChild( renderer.domElement );
-
 	// CAMERA
 	camera = new THREE.PerspectiveCamera( 35, canvasRatio, 1, 8000 );
-	camera.position.set( -1230, 920, -670 );
+	camera.position.set( -220, 820, -1260 );
 
 	// CONTROLS
 	cameraControls = new OrbitControls(camera, renderer.domElement);

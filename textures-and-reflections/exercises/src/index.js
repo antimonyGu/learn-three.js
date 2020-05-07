@@ -8,4 +8,5 @@
 // import particles from './examples/particales';
 // import particleGrid from './particle-grid';
 // import pickALetter  from './pick-a-letter';
-import grassPlain from './grass-plain';
+// import grassPlain from './grass-plain';
+import drinkingBirdTail from './drinking-bird-tail';
