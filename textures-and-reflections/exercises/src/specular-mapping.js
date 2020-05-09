@@ -20,11 +20,12 @@ var teapotSize = 400;
 function createMaterial() {
 	// MATERIALS
 	// Student: use the texture '/media/img/cs291/textures/water.jpg'
+	const specularMappingTexture = THREE.ImageUtils.loadTexture('./cs291/textures/water.png');
 	var material = new THREE.MeshPhongMaterial( { shininess: 50 } );
 	material.color.setHSL( 0.09, 0.46, 0.2 );
 	material.color.copy( material.color );
 	material.specular.setHSL( 0.09, 0.46, 1.0 );
-
+	material.specularMap = specularMappingTexture;
     return material;
 }
 
