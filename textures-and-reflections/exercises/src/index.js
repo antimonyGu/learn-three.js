@@ -9,4 +9,5 @@
 // import particleGrid from './particle-grid';
 // import pickALetter  from './pick-a-letter';
 // import grassPlain from './grass-plain';
-import drinkingBirdTail from './drinking-bird-tail';
+// import drinkingBirdTail from './drinking-bird-tail';
+import specularMapping from './specular-mapping';
