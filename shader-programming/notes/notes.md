@@ -13,3 +13,7 @@ Morden GPUs use what is called a unified shader in the hardware itself. These sh
 # SHADER INPUTS
 
 # GLSL ES
+
+# Vertex Shader Example
+
+# Fragment Shader Example
