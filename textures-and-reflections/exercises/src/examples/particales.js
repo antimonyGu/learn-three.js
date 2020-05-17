@@ -28,7 +28,8 @@ var camera, scene, renderer, stats;
 var cameraControls;
 
 var clock = new THREE.Clock();
-
+// TODO: now it use script in HTML to load Vertex Shader and Fragment Shader but it's hard to maintain. 
+// So I want to use webpack's loader to load the GLSL program.
 function init() {
 	var canvasWidth = window.innerWidth;
 	var canvasHeight = window.innerHeight;
@@ -100,7 +101,7 @@ function fillScene() {
     // a new api to make a billboard showed in three.js's official demo
     var sprite = new THREE.TextureLoader().load( './cs291/disc.png' );
     var material = new THREE.PointsMaterial(
-    { size: 35, sizeAttenuation: false, map: sprite, transparent: true, alphaTest: 0.5 } ); // add alphaTest to avoid some particles show the black part
+    	{ size: 35, sizeAttenuation: false, map: sprite, transparent: true, alphaTest: 0.5 } ); // add alphaTest to avoid some particles show the black part
 	material.color.setHSL( 0.9, 0.2, 0.6 );
 
 	var particles = new THREE.Points( geometry, material );

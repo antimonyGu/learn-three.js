@@ -1,0 +1,1 @@
+import twoToneShading from '../src/two-tone-shading';
