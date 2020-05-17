@@ -11,6 +11,9 @@ import { Coordinates as  CoordinateCreater } from './Coordinates';
 const  Coordinates = new CoordinateCreater({}, themes.dark);
 import * as dat from 'dat.gui';
 import { TeapotBufferGeometry } from 'three/examples/jsm/geometries/TeapotBufferGeometry.js';
+import vertexShader from './glsl-shader/two-tone-vertex-shader.glsl'
+import fragmentShader from './glsl-shader/two-tone-fragment-shader.glsl'
+
 
 var camera, scene, renderer, light;
 var cameraControls, effectController, phongMaterial;
@@ -136,13 +139,10 @@ function createShaderMaterial(id, light) {
 	var shader = shaderTypes[id];
 
 	var u = THREE.UniformsUtils.clone(shader.uniforms);
-    debugger
-	// this line will load a shader that has an id of "vertex" from the .html file
-	var vs = loadShader("vertex");
-	// this line will load a shader that has an id of "fragment" from the .html file
-	var fs = loadShader("fragment");
-	var material = new THREE.ShaderMaterial({ uniforms: u, vertexShader: vs, fragmentShader: fs });
     
+	var material = new THREE.ShaderMaterial({ uniforms: u, vertexShader: vertexShader, fragmentShader: fragmentShader });
+    
+
 	material.uniforms.uDirLightPos.value = light.position;
 	material.uniforms.uDirLightColor.value = light.color;
 

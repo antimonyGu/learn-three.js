@@ -17,6 +17,13 @@ module.exports = {
         contentBase: './dist',
         hot: true,
     },
+    module: {
+        rules: [
+            {
+                test: /\.glsl$/i,
+                use: 'raw-loader',
+            },
+        ],
+    },
     mode: 'development',
-    
 }
