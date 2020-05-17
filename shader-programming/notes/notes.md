@@ -17,3 +17,14 @@ Morden GPUs use what is called a unified shader in the hardware itself. These sh
 # Vertex Shader Example
 
 # Fragment Shader Example
+
+# NON-PHOTORELISTIC RENDERING
+# AKA
+- TOON SHADING
+- CEL SHADING
+- POSTERIZATION  
+[further reading](https://medium.com/cbrebuild/implementing-a-sketch-style-of-rendering-in-webgl-d6f0e4685a17)  
+
+*Transparency causes the most problems for the cel shader.*
+
+# VERTEX SHADER PROGRAMMING
