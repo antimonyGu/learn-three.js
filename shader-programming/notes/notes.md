@@ -28,3 +28,8 @@ Morden GPUs use what is called a unified shader in the hardware itself. These sh
 *Transparency causes the most problems for the cel shader.*
 
 # VERTEX SHADER PROGRAMMING
+
+# DEBUGGING SHADERS
+[good question of how to debug webgl and canvas](https://stackoverflow.com/questions/56892842/canvas-webgl-debugging-functionality-does-not-exist-in-2019-browser)
+
+# FRESNEL REFLECTION
