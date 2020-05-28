@@ -1,3 +1,5 @@
+// https://threejs.org/docs/index.html#api/en/materials/ShaderMaterial 
+// This link explain why in the vertex shader glsl do not define attribute variables, because three.js will pass built in attributes and uniforms to the shader
 varying vec3 vNormal;
 varying vec3 vViewPosition;
 varying vec3 vWorldPosition;
