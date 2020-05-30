@@ -3,4 +3,5 @@
 // import twoToneShading from '../src/debugging-shaders';
 // import fresnelDemo from './examples/unit9-fresnel';
 // import energyBalanceDemo from './examples/unit9-energy-balanced';
-import anisotropy from '../src/anisotropy';
+// import anisotropy from '../src/anisotropy';
+import gammaCorrection from '../src/examples/gamma-correction';

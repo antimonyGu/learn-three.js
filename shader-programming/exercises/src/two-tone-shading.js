@@ -14,7 +14,6 @@ import { TeapotBufferGeometry } from 'three/examples/jsm/geometries/TeapotBuffer
 import vertexShader from './glsl-shader/two-tone-vertex-shader.glsl'
 import fragmentShader from './glsl-shader/two-tone-fragment-shader.glsl'
 
-
 var camera, scene, renderer, light;
 var cameraControls, effectController, phongMaterial;
 var clock = new THREE.Clock();
