@@ -60,3 +60,11 @@ eg. (1.0, 0.793, 0.481) = (1.0, 0.6, 0.2)<sup>1/2.2</sup>
 
 # GAMMA DEMO
 If you want to reproduce the demo please use the r56 version webpack, because there are lots of apis have been deprecated. And I have't fix it yet.
+
+# TEXTURING AND POSTPROCESSING
+```glsl
+vec4 texelColor = texture2D( map, vUv );
+```
+In three.js the main file is WebGLShaders.js.
+
+[three.js post processing](https://threejs.org/docs/#manual/zh/introduction/How-to-use-post-processing)
