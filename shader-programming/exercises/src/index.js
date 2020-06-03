@@ -4,4 +4,5 @@
 // import fresnelDemo from './examples/unit9-fresnel';
 // import energyBalanceDemo from './examples/unit9-energy-balanced';
 // import anisotropy from '../src/anisotropy';
-import gammaCorrection from '../src/examples/gamma-correction';
+// import gammaCorrection from '../src/examples/gamma-correction';
+import flashlight from '../src/flashlight';

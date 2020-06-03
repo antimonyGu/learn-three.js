@@ -68,3 +68,11 @@ vec4 texelColor = texture2D( map, vUv );
 In three.js the main file is WebGLShaders.js.
 
 [three.js post processing](https://threejs.org/docs/#manual/zh/introduction/How-to-use-post-processing)
+
+# VERTEX OR FRAGMENT SHADER?
+| vertex shader | fragment shader | things to do |
+| -- | -- | -- |
+|  | - [x] | blurring an image |
+|- [x]|| changing an object's shape |
+|- [x]|- [x]| evaluating an illumination model |
+| | | performing gouraud interpolation |
