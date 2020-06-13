@@ -6,4 +6,5 @@
 // import anisotropy from '../src/anisotropy';
 // import gammaCorrection from '../src/examples/gamma-correction';
 // import flashlight from '../src/flashlight';
-import modelDeformation from '../src/model-deformation'
+// import modelDeformation from '../src/model-deformation';
+import sharpSpecular from '../src/sharp-specular';
