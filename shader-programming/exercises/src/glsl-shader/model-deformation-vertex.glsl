@@ -12,7 +12,9 @@ void main() {
 	newPosition.z -= sqrt(uSphereRadius2);
 
 	gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
-	vNormal = normalize( normalMatrix * normal );
+	// vNormal = normalize( normalMatrix * normal );
+	vec3 newNormal = vec3( newPosition ) - vec3(0.0, 0.0, -sqrt(uSphereRadius2));
+	vNormal = normalize( normalMatrix * newNormal );
 	vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 );
 	vViewPosition = -mvPosition.xyz;
 }
