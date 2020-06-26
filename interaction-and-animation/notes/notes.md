@@ -28,3 +28,19 @@ function onDocumentMouseDown( event ) {
 
 # Incremental Animation
 
+# TIMED ANIMATION
+```js
+var clock = new THREE.Clock();
+function render() {
+    var delta = clock.getDelta();
+}
+bird.animated.rotation.z += tiltDirection * 30 * delta * Math.PI/180; // This way to render the rotation will cause a problem, that when you switch to another page the render of this page will be stopped by the broswer. And when you back to this page again the delta will be a huge number so the drinking bird will rotate in a very fast speed.
+
+// The way to solve this problem is using the bulletproof which is taking the modulus of the rotation angle.
+```
+
+# KEY FRAMING
+
+# TEXTURE ANIMATION
+
+
