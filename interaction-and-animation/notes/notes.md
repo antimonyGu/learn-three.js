@@ -40,6 +40,7 @@ bird.animated.rotation.z += tiltDirection * 30 * delta * Math.PI/180; // This wa
 ```
 
 # KEY FRAMING
+[an very clear introduction of quaternion and slerp](https://github.com/Krasjet/quaternion/tree/master/demo)
 
 # TEXTURE ANIMATION
 
